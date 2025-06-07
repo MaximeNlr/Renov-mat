@@ -3,24 +3,52 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --yellow: #FFC518;
+  --green: #698B65;
+  --pink: #FF72AF;
+  --purple: #cc6ed0;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
     --foreground: #ededed;
   }
 }
 
 body {
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: nunito, sans-serif;
+}
+
+.renov-title {
+  font-family: 'Rubik Wet Paint', cursive;
+}
+
+.profile-inputs input,
+select {
+  @apply border-2 border-[var(--yellow)] rounded-[5px] w-[15vw] h-[4vh] pl-3 outline-0
+}
+
+.profile-inputs label {
+  @apply w-[150px]
+}
+
+.profile-input-label-container {
+  @apply flex gap-3.5 items-center
+}
+
+.profile-pref {
+  @apply w-1/4 rounded-[5px] text-center pt-2 pb-2 cursor-pointer whitespace-nowrap
+}
+
+.custom-checkbox {
+  @apply mr-2
+}
+
+.selected-product-container h3 {
+  @apply font-extrabold text-[1.1rem] mb-1.5
+}
+
+.selected-product-container label {
+  @apply text-[0.9rem]
 }
