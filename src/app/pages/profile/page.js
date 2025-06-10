@@ -32,7 +32,7 @@ export default function Profile() {
             </div>
             <div className="pl-20 pr-20 pt-10 pb-10">
                 <div className="flex justify-between">
-                    <div className="flex items-baseline">
+                    <div className="flex items-center lg:gap-2.5">
                         <img src={user.image} alt="" />
                         <h2 className="text-4xl text-[var(--green)] font-bold">Bienvenue {user.firstname}</h2>
                         <img src="../../Assets/profile-icon.svg" alt="" />
@@ -53,9 +53,21 @@ export default function Profile() {
                 <div className="mt-10">
                     <div className="flex ml-10 gap-10 font-extrabold">
                         <Link href="#" className="bg-[var(--yellow)] p-1.5 rounded-t-lg">MON PROFIL</Link>
-                        <Link href="#">MES ANNONCES</Link>
-                        <Link href="#"> MES ÉVALUTATIONS</Link>
-                        <Link href="#">MES TRANSACTIONS</Link>
+                        <Link href="#" 
+                            className="hover:border-[var(--yellow)] border-t-2 border-l-2 border-r-2 border-transparent rounded-t-lg p-1.5 transition-colors duration-100"
+                        >
+                            MES ANNONCES
+                        </Link>
+                        <Link href="#"
+                            className="hover:border-[var(--yellow)] border-t-2 border-l-2 border-r-2 border-transparent rounded-t-lg p-1.5 transition-colors duration-100"
+                        > 
+                            MES ÉVALUTATIONS
+                        </Link>
+                        <Link href="#"
+                            className="hover:border-[var(--yellow)] border-t-2 border-l-2 border-r-2 border-transparent rounded-t-lg p-1.5 transition-colors duration-100"
+                        >
+                            MES TRANSACTIONS
+                        </Link>
                     </div>
                     <div>
                         <div>
@@ -101,7 +113,7 @@ export default function Profile() {
                                                     <h2 className="text-center text-[1.3rem]">MES UNIVERS PRÉFÉRÉS</h2>
                                                 </div>
                                                 <div className="flex flex-col h-full justify-around">
-                                                    <div className="flex flex-wrap text-[1rem] font-bold gap-10 justify-center text-white">
+                                                    <div className="flex flex-wrap text-[0.9rem] font-bold gap-10 justify-center text-white">
                                                         <div className="profile-pref bg-[var(--yellow)]">
                                                             <p>OUTILS</p>
                                                         </div>
@@ -109,16 +121,16 @@ export default function Profile() {
                                                             <p>PEINTURE</p>
                                                         </div>
                                                         <div className="profile-pref bg-[var(--yellow)]">
-                                                            <p>PEINCEAUX</p>
+                                                            <p>PINCEAUX</p>
                                                         </div>
                                                         <div className="profile-pref bg-[var(--green)]">
-                                                            <p>AJOUTER UN UNIVERS</p>
+                                                            <p>+</p>
                                                         </div>
                                                         <div className="profile-pref bg-[var(--green)]">
-                                                            <p>AJOUTER UN UNIVERS</p>
+                                                            <p>+</p>
                                                         </div>
                                                         <div className="profile-pref bg-[var(--green)]">
-                                                            <p>AJOUTER UN UNIVERS</p>
+                                                            <p>+</p>
                                                         </div>
                                                     </div>
                                                     <div className="flex justify-end">

@@ -14,15 +14,28 @@ export default function selectedProduct() {
     useEffect(() => {
         const storedProduct = localStorage.getItem('selected product');
         if (storedProduct) {
-            setProduct(JSON.parse(storedProduct));
+          setProduct(JSON.parse(storedProduct));
         }
-    }, []);
-    console.log(product)
-
-    const addToCard = () => {
-        setIsAdded(true)
-        localStorage.setItem('card', JSON.stringify(product))
-    }
+      }, []);
+      
+      useEffect(() => {
+        if (!product) return;
+      
+        const storedCard = JSON.parse(localStorage.getItem('card')) || [];
+        const found = storedCard.some((item) => item.id === product.id);
+        setIsAdded(found);
+      }, [product]);
+      
+      const addToCard = () => {
+        const storedCard = JSON.parse(localStorage.getItem('card')) || [];
+      
+        const alreadyAdded = storedCard.some((item) => item.id === product.id);
+        if (!alreadyAdded) {
+          const updatedCard = [...storedCard, product];
+          localStorage.setItem('card', JSON.stringify(updatedCard));
+          setIsAdded(true);
+        }
+      };
 
     return (
         <div>
@@ -32,7 +45,7 @@ export default function selectedProduct() {
             <div>
                 <Promo />
             </div>
-            <div className="lg:text-2xl">
+            <div className="">
                 <div className="flex flex-row w-full justify-center gap-[5%] mt-20">
                     <div className="flex flex-row w-[40%] items-center">
                         <div className="m-auto cursor-pointer">
@@ -51,50 +64,72 @@ export default function selectedProduct() {
                         </div>
                     </div>
                     <div className="w-[40%]">
-                        <h1 className="lg:text-3xl font-extrabold">{product.name}</h1>
+                        <h1 className="lg:text-2xl xl:text-3xl font-extrabold">{product.name}</h1>
                         <div className="flex flex-row gap-1.5">
                             <h3>{product.quantity}</h3>
                             <p>-</p>
-                            <h3>{product.stats}</h3>
+                            <h3>{product.state}</h3>
                         </div>
-                        <h2 className="text-2xl">{product.price}</h2>
+                        <h2 className="text-2xl">{product.price}€</h2>
                         <div className="h-0.5 w-full bg-[var(--yellow)] mb-6"></div>
                         <div className="flex flex-row justify-between mr-4">
                             <ul>
-                                <li>Quantité <strong>{product.quantity}</strong></li>
-                                <li>Marque <strong>{product.brand}</strong></li>
-                                <li>Couleur <strong>{product.color}</strong></li>
+                                <div className="flex gap-2">
+                                    <li className="lg:w-[70px]">Quantité</li>
+                                    <li><strong>{product.quantity}</strong></li>
+                                </div>
+                                <div className="flex gap-2">
+                                    <li className="lg:w-[70px]">Marque</li>
+                                    <li><strong>{product.brand}</strong></li>
+                                </div>
+                                <div className="flex gap-2">
+                                    <li className="lg:w-[70px]">Couleur</li>
+                                    <li><strong>{product.color}</strong></li>
+                                </div>
                             </ul>
                             <ul>
-                                <li>Materiaux <strong>{product.materials}</strong></li>
-                                <li>Remise <strong>Main propre</strong></li>
+                            <div className="flex gap-2">
+                                    <li className="lg:w-[70px]">Materiaux</li>
+                                    <li><strong>{product.materials}</strong></li>
+                                </div>
+                                <div className="flex gap-2">
+                                    <li className="lg:w-[70px]">Remise</li>
+                                    <li><strong>Main propre</strong></li>
+                                </div>
                             </ul>
                         </div>
                         <div className="h-0.5 w-full bg-[var(--yellow)] mt-6 mb-10"></div>
-                        <div className="flex flex-row justify-between text-[1rem]">
+                        <div className="flex flex-row justify-between">
                             {isAdded == false &&
                             <button 
                                 onClick={addToCard}
-                                className="bg-[var(--yellow)] text-white font-extrabold rounded-[10px] w-[180px] cursor-pointer p-2 hover:text-[var(--green)] hover:transition-[0.3s] transition-[0.3s]"
-                            >
+                                className={`font-bold rounded-[10px] w-[180px] p-2 transition-all hover:bg-[var(--green)] hover:scale-105 duration-300
+                                        ease-in-out transform cursor-pointer ${
+                                    isAdded
+                                      ? 'bg-[var(--green)] text-white'
+                                      : 'bg-[var(--yellow)] text-white'
+                                  }`}                            >
                                 ACHETER
                             </button> 
                             }
                             {isAdded == true && 
                             <button 
                                 onClick={addToCard}
-                                className="bg-[var(--green)] text-white font-extrabold rounded-[10px] w-[180px] cursor-pointer p-2"
-                            >
+                                className="bg-[var(--yellow)] cursor-pointer text-white font-bold rounded-[10px] w-[180px] p-2 transition-all
+                                    duration-300 ease-in-out transform hover:bg-[var(--green)] hover:scale-105"
+                                >
                                 AJOUTÉ AU PANIER
                             </button>
                             }
                             <button 
-                                className="bg-[var(--yellow)] text-white font-extrabold rounded-[10px] w-[180px] cursor-pointer p-2"
-                            >
+                                className="bg-[var(--yellow)] cursor-pointer text-white font-bold rounded-[10px] w-[180px] p-2 transition-all
+                                    duration-300 ease-in-out transform hover:bg-[var(--green)] hover:scale-105"
+                                >
                                 AJOUTER AUX FAVORIS
                             </button>
                             <button
-                                className="bg-[var(--yellow)] text-white font-extrabold rounded-[10px] w-[180px] cursor-pointer p-2"
+                                className="bg-[var(--yellow)] cursor-pointer text-white font-bold rounded-[10px] w-[180px] p-2 transition-all
+                                    duration-300 ease-in-out transform hover:bg-[var(--green)] hover:scale-105"
                             >
                                 CONTACTER LE VENDEUR
                             </button>
@@ -103,7 +138,7 @@ export default function selectedProduct() {
                 </div>
                 <div className="flex flex-wrap justify-between ml-[80px] mt-[80px]">
                     <div className="w-[60%] ">
-                        <div className="flex flex-row border-b-2 border-[var(--green)] gap-2 ">
+                        <div className="flex flex-row border-b-2 border-[var(--green)] gap-2 text-[1.1rem] font-bold">
                             <div className="bg-[var(--green)] text-white font-extrabold p-1.5 cursor-pointer rounded-t-[10px]">
                                 <h4>Description supplémentaire </h4>
                             </div>
@@ -143,7 +178,12 @@ export default function selectedProduct() {
                             </div>
                             <div>
                                 <Link href="/pages/seller">
-                                    <button className="bg-[var(--yellow)] p-2.5 text-white font-extrabold rounded-[10px] w-[180px] cursor-pointer">VOIR PLUS</button>
+                                    <button
+                                        className="bg-[var(--yellow)] cursor-pointer text-white font-bold rounded-[10px]
+                                            w-[180px] p-2 transition-all duration-300 ease-in-out transform hover:bg-[var(--green)] hover:scale-105"
+                                    >
+                                        VOIR PLUS
+                                    </button>
                                 </Link>
                             </div>
                         </div>

@@ -2,6 +2,7 @@
 
 import Header from '@/app/Components/Header/Header';
 import Promo from '@/app/Components/Promo/Promo';
+import Footer from '@/app/Components/Footer/Footer';
 import { useEffect, useState } from 'react';
 import { useRouter } from "next/navigation";
 
@@ -153,8 +154,8 @@ export default function searchedProduct() {
                 </div>
                 <div className="grid grid-cols-4 w-full lg:ml-[100px] mt-10 ">
                     {products.map((product, index) => (
-                        <div className="lg:w-[300px] shadow-md flex flex-col justify-center
-                            items-center rounded-2xl lg:h-[300px] mb-8 cursor-pointer hover:lg:scale-[1.1] hover:transition-[0.5s] transition-[0.5s]"
+                        <div className="lg:w-[270px] border-1 border-gray-300 flex flex-col justify-center
+                            items-center lg:h-[300px] mb-8 cursor-pointer hover:lg:scale-[1.1] duration-100"
                             key={index}
                             onClick={() => selectedProduct(product)}
                         >
@@ -174,7 +175,7 @@ export default function searchedProduct() {
                                 <div className="flex flex-row gap-1.5 justify-center">
                                     <p>{product.quantity}</p>
                                     <p>-</p>
-                                    <p>{product.price}</p>
+                                    <p>{product.price}€</p>
                                 </div>
                                 <p className='text-center'>{product.state}</p>
                                 <div className='flex w-1/2 gap-1.5'>
@@ -193,6 +194,9 @@ export default function searchedProduct() {
                         </div>
                     ))}
                 </div>
+            </div>
+            <div>
+                <Footer />
             </div>
         </div >
     )

@@ -11,13 +11,13 @@ export default function Forum () {
             <div>
                 <Promo />
             </div>
-            <div className="flex flex-row w-full gap-10 mt-10 pl-5 text-[1.3rem]">
+            <div className="flex flex-row w-full gap-10 mt-10 pl-5">
                 <div className="w-[18%] whitespace-nowrap">
                     <div className="flex flex-col bg-[var(--yellow)] rounded-[10px] mb-5 p-3">
                         <div>
                             <h2 className="text-center font-bold mb-3">Thématique</h2>
                         </div>
-                        <div className="flex flex-col gap-3 pl-[15%] text-[1.1rem]">
+                        <div className="flex flex-col gap-3 pl-[15%] text-[1rem]">
                             <div>
                                 <input className="mr-3" type="checkbox"/>
                                 <label>Peinture</label>
@@ -60,7 +60,7 @@ export default function Forum () {
                         <div>
                             <h2 className="text-center font-bold mb-3">Trié par</h2>
                         </div>
-                        <div className="flex flex-col gap-3 pl-[15%] text-[1.1rem]">
+                        <div className="flex flex-col gap-3 pl-[15%] text-[1rem]">
                             <div>
                                 <input className="mr-3" type="checkbox"/>
                                 <label>Du + au - récent</label>
@@ -81,12 +81,12 @@ export default function Forum () {
                     </div>
                 </div>
                 <div className="w-[70%] lg:pr-40">
-                    <div className="flex items-center gap-3 p-2 border-2 border-[var(--green)] rounded-[20px] lg:h-10 lg:w-1/2 mb-10">
+                    <div className="flex items-center gap-3 p-2 border-2 border-[var(--green)] rounded-[20px] lg:h-10 lg:w-full mb-10">
                         <img src="../../Assets/Search.svg" alt="search" />
                         <input
-                            className="outline-0 w-full"
+                            className="outline-0 w-full placeholder:text-[1rem]"
                             type="text"
-                            placeholder="Besoin de quelque chose ?"
+                            placeholder="Rechercher sur le forum"
                         />
                         <button></button>
                     </div>
@@ -95,13 +95,13 @@ export default function Forum () {
                              <h2 className="font-extrabold">
                                  [AIDE] Ma peinture cloque 48h après application, normal ?
                              </h2>
-                             <p className="text-[1rem]">Eric.P - Résolu</p>
+                             <p className="text-[0.9rem]">Eric.P - Résolu</p>
                         </div>
                         <div className="flex flex-row gap-1">
-                            <img src="../../Assets/Forum/comment.svg" alt="logo commentaire"/>
-                            <p>8</p>
+                            <img className="lg:w-[20px]" src="../../Assets/Forum/comment.svg" alt="logo commentaire"/>
+                            <p className="text-[0.9rem]">8</p>
                         </div>
-                        <div className="mt-4">
+                        <div className="mt-4 ">
                             <p>
                                 Salut, j’ai peint un mur en blanc mat (sous-couche + 2 couches) mais ça commence à cloquer.
                                 Le mur était sec à l’œil mais j’ai pas poncé avant. Vous pensez que c’est lié à l’humidité ou à la peinture de mauvaise qualité ? Merci !
@@ -114,11 +114,11 @@ export default function Forum () {
                             <h2 className="font-extrabold">
                                 [CONSEIL] Vos marques de peinture préférées pour salle de bain ?
                             </h2>
-                             <p className="text-[1rem]">Jean.M - Ouvert</p>
+                             <p className="text-[0.9rem]">Jean.M - Ouvert</p>
                         </div>
                         <div className="flex flex-row gap-1">
-                            <img src="../../Assets/Forum/comment.svg" alt="logo commentaire"/>
-                            <p>14</p>
+                            <img className="lg:w-[20px]" src="../../Assets/Forum/comment.svg" alt="logo commentaire"/>
+                            <p className="text-[0.9rem]">14</p>
                         </div>
                         <div className="mt-4">
                             <p>
@@ -133,11 +133,11 @@ export default function Forum () {
                              <h2 className="font-extrabold whitespace-nowrap">
                                 [COUP DE MAIN LOCAL] Besoin d’un coup de main pour repeindre un plafond à Nice ce week-end
                             </h2>
-                             <p className="text-[1rem] whitespace-nowrap">Marc.D - Ouvert</p>
+                             <p className="text-[0.9rem] whitespace-nowrap">Marc.D - Ouvert</p>
                         </div>
                         <div className="flex flex-row gap-1">
-                            <img src="../../Assets/Forum/comment.svg" alt="logo commentaire"/>
-                            <p>4</p>
+                            <img className="lg:w-[20px]" src="../../Assets/Forum/comment.svg" alt="logo commentaire"/>
+                            <p className="text-[0.9rem]">4</p>
                         </div>
                         <div className="mt-4">
                             <p>

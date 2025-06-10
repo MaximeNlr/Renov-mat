@@ -1,5 +1,6 @@
 import Header from "@/app/Components/Header/Header"
 import Promo from "@/app/Components/Promo/Promo"
+import Footer from "@/app/Components/Footer/Footer"
 
 export default function about () {
     return (
@@ -12,13 +13,13 @@ export default function about () {
             </div>
             <div>
                 <h1 className="text-[var(--yellow)] font-extrabold sm:text-2xl md:text-3xl lg:text-4xl text-center mt-10">À PROPOS DE <span className="text-[var(--green)]">NOUS</span></h1>
-                <div className="flex flex-row justify-center mt-10">
-                    <div>
+                <div className="flex flex-row mt-10">
+                    <div className="lg:w-1/2">
                         <div className="flex flex-col justify-around md:h-[200px] lg:h-[250px] pr-3">
                             <div className="flex justify-end">
-                                <h2 className="font-extrabold text-3xl">Mission – Pourquoi Renov’Mat existe ?</h2>
+                                <h2 className="font-extrabold text-2xl">Mission – Pourquoi Renov’Mat existe ?</h2>
                             </div>
-                            <div className="flex flex-col items-end lg:text-[1.3rem]">
+                            <div className="flex flex-col items-end lg:text-[1.1rem]">
                                 <p>📦 Donner une seconde vie aux matériaux</p>
                                 <p>🔄 Faciliter les transactions entre acheteurs et vendeurs</p>
                                 <p>♻️ Promouvoir l’économie circulaire dans le BTP</p>
@@ -28,10 +29,10 @@ export default function about () {
                             <img className="md:h-[250px] lg:h-[300px]" src="../../Assets/About/about2.png" />
                         </div>
                         <div className="flex flex-col justify-around md:h-[200px] lg:h-[250px] pr-3">
-                            <div>
-                                <h2 className="font-extrabold text-3xl">Valeurs – Ce qui nous guide au quotidien</h2>
+                            <div className="flex justify-end">
+                                <h2 className="font-extrabold text-2xl">Valeurs – Ce qui nous guide au quotidien</h2>
                             </div>
-                            <div className="flex flex-col items-end lg:text-[1.3rem]">
+                            <div className="flex flex-col items-end lg:text-[1.1rem]">
                                 <p>♻️ Économie circulaire & durabilité</p>
                                 <p>🌎 Simplicité & transparence</p>
                                 <p>👥 Communauté & entraide</p>
@@ -39,16 +40,16 @@ export default function about () {
                             </div>
                         </div>
                     </div>
-                    <div>
+                    <div className="lg:w-1/2">
                         <div>
                             <img className="md:h-[200px] lg:h-[250px]" src="../../Assets/About/about1.png" />
                         </div>
                         <div className="flex flex-col justify-around md:h-[250px] lg:h-[300px] pl-3">
                             <div>
-                                <h2 className="font-extrabold text-3xl">Vision – Où voulons-nous aller ?</h2>
+                                <h2 className="font-extrabold lg:text-2xl">Vision – Où voulons-nous aller ?</h2>
                             </div>
-                            <div className="text-[1.3rem]">
-                                <p>🚀 Développer la plus grande marketplace spécialisée en matériaux de construction en France</p>
+                            <div className="flex flex-col lg:text-[1.1rem]">
+                                <p>🚀 Développer la plus grande marketplace spécialisée <spans className="">en matériaux de construction en France</spans></p>
                                 <p>🌍 Faire du réemploi une norme dans le BTP</p>
                                 <p>🔧 Intégrer des services complémentaires</p>
                                 <p>🌎 S’étendre à l’international</p>
@@ -61,9 +62,9 @@ export default function about () {
                 </div>
             </div>
             <div className=" flex h-0.5 w-[70%] bg-[var(--green)] mt-20 mb-20 mr-auto ml-auto"></div>
-            <div className="h-[100vh] lg:text-[1.3rem] lg:ml-40 lg:mr-40">
+            <div className="h-[100vh] lg:text-[1.1rem] lg:ml-40 lg:mr-40">
                 <div className="lg:w-[60%]">
-                    <h2 className="font-bold lg:text-3xl lg:mb-7 whitespace-nowrap">Donner une seconde vie aux matériaux, c’est notre engagement.</h2>
+                    <h2 className="font-bold lg:text-2xl lg:mb-7 whitespace-nowrap">Donner une seconde vie aux matériaux, c’est notre engagement.</h2>
                     <p>
                         Chez Renov’Mat, nous avons une mission simple : réduire le gaspillage dans le secteur du BTP
                         en facilitant l’achat et la vente de matériaux de construction neufs et d’occasion.
@@ -75,7 +76,7 @@ export default function about () {
                     </p>
                 </div>
                 <div className="flex flex-col justify-end items-end">
-                    <h2 className="font-bold lg:text-3xl lg:mb-7">Pourquoi choisir Renov’Mat ?</h2>
+                    <h2 className="font-bold lg:text-2xl lg:mb-7">Pourquoi choisir Renov’Mat ?</h2>
                     <p className="lg:w-[60%]">
                         Une alternative au gaspillage → Ce qui ne sert plus à l’un peut être essentiel pour un autre.Des matériaux à prix réduits →
                         Accédez à des matériaux de qualité sans exploser votre budget.Une plateforme simple et sécurisée → Achat et vente en quelques
@@ -91,6 +92,9 @@ export default function about () {
                         allié pour une rénovation plus responsable et plus accessible !
                     </p>
                 </div>
+            </div>
+            <div>
+                <Footer />
             </div>
         </div>
     )

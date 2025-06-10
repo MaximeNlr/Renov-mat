@@ -25,9 +25,9 @@ export default function Search() {
         <div className="w-full">
             <form action="">
                 <div className="flex items-center gap-3 p-2 border-2 border-[var(--green)] rounded-2xl w-full">
-                    <img src="../../Assets/Search.svg" alt="search" />
+                    <img className="lg:w-[18px]" src="../../Assets/Search.svg" alt="search" />
                     <input
-                        className="outline-0 w-full"
+                        className="outline-0 w-full h-full placeholder:text-[0.9rem]"
                         type="text"
                         placeholder="Besoin de quelque chose ?"
                     />

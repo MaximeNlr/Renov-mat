@@ -1,5 +1,6 @@
 import Header from "@/app/Components/Header/Header"
 import Promo from "@/app/Components/Promo/Promo"
+import Footer from "@/app/Components/Footer/Footer"
 import Link from "next/link"
 
 export default function Seller () {
@@ -64,14 +65,25 @@ export default function Seller () {
                         </div>
                     </div>
                     <div className="flex items-center gap-4">
-                        <button className="bg-[var(--yellow)] p-2 rounded-[5px] text-white text-shadow-2xs font-bold w-[150px] cursor-pointer">SUIVRE</button>
-                        <button className="bg-[var(--yellow)] p-2 rounded-[5px] text-white text-shadow-2xs font-bold w-[150px] cursor-pointer">CONTACTER</button>
+                        <button className="bg-[var(--yellow)] cursor-pointer text-white font-bold rounded-[10px] w-[180px] p-2 transition-all
+                            duration-300 ease-in-out transform hover:bg-[var(--green)] hover:scale-105"
+                        >
+                            SUIVRE
+                        </button>
+                        <button className="bg-[var(--yellow)] cursor-pointer text-white font-bold rounded-[10px] w-[180px] p-2 transition-all
+                            duration-300 ease-in-out transform hover:bg-[var(--green)] hover:scale-105"
+                        >
+                            CONTACTER
+                        </button>
                     </div>
                 </div>
                 <div className="pt-[100px]">
                     <div className="flex flex-row items-center ml-10 gap-10 font-extrabold">
-                        <Link href="#">ANNONCE(S)</Link>
-                        <Link href="#" className="bg-[var(--yellow)] p-1.5 rounded-t-lg">EVALUTATIONS</Link>
+                        <Link href="#"  className="hover:border-[var(--yellow)] border-t-2 border-l-2 border-r-2 border-transparent rounded-t-lg p-1.5 transition-colors duration-100"
+                        >
+                            ANNONCE(S)
+                        </Link>
+                        <Link href="#" className="bg-[var(--yellow)] p-1.5 rounded-t-lg hover:border-[var(--yellow)] border-t-2 border-l-2 border-r-2 border-transparent transition-colors duration-100">EVALUTATIONS</Link>
                     </div>
                     <div className="border-4 rounded-2xl border-[var(--yellow)] p-8 h-[400px]">
                         <div className="flex h-full">
@@ -197,6 +209,9 @@ export default function Seller () {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div>
+                <Footer />
             </div>
         </div>
     )

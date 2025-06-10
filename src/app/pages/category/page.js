@@ -45,7 +45,7 @@ export default function Category () {
                     <div
                         key={index}
                         style={{ backgroundImage: `url(${paint.img})` }}
-                        className=" flex items-center justify-center lg:w-[300px] h-[300px] bg-cover rounded-2xl cursor-pointer"
+                        className=" flex items-center justify-center lg:w-[300px] h-[300px] bg-cover rounded-2xl cursor-pointer hover:lg:scale-[1.1] hover:transition-[0.5s] transition-[0.5s]"
                     >
                         <div className="flex items-center text-center justify-center rounded-[50%] h-[150px] w-[150px] opacity-70 bg-white">
                             <h3 className="font-extrabold">{paint.title}</h3>

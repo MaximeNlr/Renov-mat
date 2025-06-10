@@ -20,7 +20,7 @@ export default function Home() {
       <div className="home-carousel-container">
         <CarouselHome />
       </div>
-      <div className="flex flex-wrap mt-10 font-bold justify-around lg:h-full">
+      <div className="flex flex-wrap mt-10 font-bold justify-between ml-[80px] mr-[80px]">
         <div className="w-[20%]">
           <Tendancy />
         </div>
